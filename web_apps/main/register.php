@@ -132,7 +132,7 @@
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
         <div class="row">
             <div class="col-md-8">
-                <form name="sentMessage" id="contactForm" action="createAccount.php" method="post" novalidate>
+                <!--<form name="sentMessage" id="contactForm" action="createAccount.php" method="post" novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Username</label>
@@ -159,9 +159,33 @@
                         </div>
                     </div>
                     <div id="success"></div>
-                    <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                    <input type="submit" class="btn btn-primary">Send Message</button>
+                </form> -->
+                <form id="regForm" action="createAccount.php" method="post">
+					<div id="error">
+										</div>
+					<table>
+						<tr>
+							<td>Choose your username</td>
+							<td><input name="username"></td>
+						</tr>
+						<tr>
+							<td>Choose your password</td>
+							<td><input type="password" name="password"></td>
+						</tr>
+						<tr>
+							<td>Input password again</td>
+							<td><input type="password" name="passwordVerify"></td>
+						</tr>
+						<tr>
+							<td>Input your e-mail</td>
+							<td><input type="email" name="email"></td>
+						</tr>
+						<tr>
+							<td><input type="submit" value="Sign Up"></td>
+						</tr>
+					</table>
+				</form>
             </div>
 
         </div>
