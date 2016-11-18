@@ -142,19 +142,19 @@
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Password:</label>
+                            <label>Password</label>
                             <input type="password" class="form-control" id="password" required data-validation-required-message="Please enter your Password.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Retype Password:</label>
+                            <label>Retype Password</label>
                             <input type="password" class="form-control" id="password_re" required data-validation-required-message="Please retype your Password.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Email Address:</label>
+                            <label>Email Address</label>
                             <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
                         </div>
                     </div>
