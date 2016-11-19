@@ -90,8 +90,8 @@ class Database {
 		
 	}*/
 	
-	/*function lastId() {
+	function lastId() {
 		$id = $this->database->insert_id;
 		return $id;
-	}*/
+	}
 }

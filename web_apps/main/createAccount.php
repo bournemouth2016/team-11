@@ -30,12 +30,13 @@ else if($_POST['email']==NULL || $_POST['email']==''){
 else{
 	$salt=sha1(time());
 	$phash=sha1($_POST['password'].$salt);
-	//echo "INSERT INTO users VALUES(NULL, '".$_POST['username']."', '".$phash."', '".$salt."', '".$_POST['email']."', 'normal');";
 	$db->query("INSERT INTO users VALUES(NULL, '".$_POST['username']."', '".$phash."', '".$salt."', '".$_POST['email']."', 'normal');");
-	//$id=$db->lastId();
+	$id=$db->lastId();
+	echo $id;
 	//login the user
-	//session_start();
-	//$_SESSION['id'] = $id;
-	//header('Location:panel.php');
+	session_start();
+	$_SESSION['id'] = $id;
+	$_SESSION['type'] = "normal";
+	header('Location:redirectUser.php');
 }
 ?>
