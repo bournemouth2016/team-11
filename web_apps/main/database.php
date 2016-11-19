@@ -20,13 +20,8 @@ class Database {
 	}*/
 	
 	function query($query) {
-		/*$result = $this->database->query($query);
-		return $result;*/
-		if ($this->database->query($query) === TRUE) {
-			echo "New record created successfully";
-		} else {
-			echo "Error: " . $query . "<br>" . $conn->error;
-		}
+		$result = $this->database->query($query);
+		return $result;
 	}
 	
 	/*function querySingle($query) {
@@ -44,11 +39,11 @@ class Database {
 	
 	private function getConnection() {
 		$conn = new mysqli("localhost", "admin", "admin", "mainDB");
-		if ($conn->connect_error) {
+		/*if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
 		echo "Host information: " . mysqli_get_host_info($conn) . PHP_EOL;
-		echo "Connected successfully";
+		echo "Connected successfully";*/
 		
 		/*$sqla = "SELECT * FROM users";
 		$result = $conn->query($sqla);
