@@ -8,9 +8,9 @@ if(sha1($_POST['password'].$row['salt']) == $row['phash']) {
 	session_start();
 	$_SESSION['id'] = $row['userid'];
 	$_SESSION['type'] = $row['utype'];
-	echo "true";
+	echo $row['userid'];
 }
 else {
-	echo "false";
+	echo "-1";
 }
 ?>
