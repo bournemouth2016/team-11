@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "163104255170",
+    "firebase_url": "https://rnli-b2ea0.firebaseio.com",
+    "project_id": "rnli-b2ea0",
+    "storage_bucket": "rnli-b2ea0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163104255170:android:bf07b6fc19036965",
+        "android_client_info": {
+          "package_name": "rlmi.mob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163104255170-5du1aobt84a3q3hhe96t92gn1rsfqu9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR7fIpmLO2VgQBczSABLdcdLvuLLKubJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163104255170:android:0162cd854fe79858",
+        "android_client_info": {
+          "package_name": "rlmi.last"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163104255170-5du1aobt84a3q3hhe96t92gn1rsfqu9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR7fIpmLO2VgQBczSABLdcdLvuLLKubJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
