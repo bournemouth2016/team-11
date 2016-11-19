@@ -50,10 +50,10 @@ else
             }
             */
             if ($stmt2 = mysqli_prepare($connection, "INSERT INTO `incidents` (`user_id`, `type`,`longitude`, `latitude`) VALUES (?, ?, ?, ?) ")) {
-                mysqli_stmt_bind_param($stmt2,"iiff",$id, $error, $longitude, $latitude);
+                mysqli_stmt_bind_param($stmt2,"iidd",$id, $error, $longitude, $latitude);
                 mysqli_stmt_execute($stmt2);
             }
         }
+    }
 
     }
-}
