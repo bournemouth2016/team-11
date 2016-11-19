@@ -10,7 +10,8 @@ uname VARCHAR(30) NOT NULL,
 phash VARCHAR(40) NOT NULL,
 salt VARCHAR(40),
 email VARCHAR(60),
-utype VARCHAR(20)
+utype VARCHAR(20),
+token VARCHAR(255)
 );
 
 CREATE TABLE registeredBoats(
@@ -22,4 +23,8 @@ tel_num VARCHAR(20),
 file_path VARCHAR(150)
 );
 
-CREATE TABLE incidents(id INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY, itype INT(2), lat FLOAT(9,6),lon FLOAT(9,6));
+CREATE TABLE incidents(id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, user_id INT(7), type INT(2), time timestamp,longitude FLOAT(9,6),latitude FLOAT(9,6));
+
+INSERT INTO incidents VALUE(NULL, 1, 2, NULL, 90.23, 8.054);
+INSERT INTO incidents VALUE(NULL, 5, 3, NULL, 6.23, -28.054);
+INSERT INTO incidents VALUE(NULL, 2, 4, NULL, 30.23, 50.054);

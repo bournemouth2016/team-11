@@ -5,9 +5,9 @@ require 'database.php';
 
 $db = new Database();
 
-//$usr = $db->query("SELECT * FROM users WHERE uname = '".$_POST['username']."';");
+$usr = $db->query("SELECT * FROM users WHERE uname = '".$_POST['username']."';");
 
-//$eml = $db->query("SELECT * FROM users WHERE email = '".$_POST['email']."';");
+$eml = $db->query("SELECT * FROM users WHERE email = '".$_POST['email']."';");
 
 if($usr->num_rows > 0){
 	header("Location: register.php?fail=taken");
@@ -30,9 +30,8 @@ else if($_POST['email']==NULL || $_POST['email']==''){
 else{
 	$salt=sha1(time());
 	$phash=sha1($_POST['password'].$salt);
-	$db->query("INSERT INTO users VALUES(NULL, '".$_POST['username']."', '".$phash."', '".$salt."', '".$_POST['email']."', 'normal');");
+	$db->query("INSERT INTO users VALUES(NULL, '".$_POST['username']."', '".$phash."', '".$salt."', '".$_POST['email']."', 'normal', '".sha1(time())."');");
 	$id=$db->lastId();
-	echo $id;
 	//login the user
 	session_start();
 	$_SESSION['id'] = $id;
