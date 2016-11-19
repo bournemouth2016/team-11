@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton b3;
     private ImageButton b4;
     private TextView t;
+    private TextView d;
     private LocationManager locationManager;
     private LocationListener listener;
 
@@ -38,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.buttons_main);
 
         t = (TextView) findViewById(R.id.textView);
+        d = (TextView) findViewById(R.id.distressType);
         b = (Button) findViewById(R.id.button);
-
 
         b1 = (ImageButton) findViewById(R.id.imageButton1);
         b2 = (ImageButton) findViewById(R.id.imageButton2);
@@ -116,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //noinspection MissingPermission
                 locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                d.setText("Medical Problem");
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //noinspection MissingPermission
                 locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                d.setText("Sinking");
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //noinspection MissingPermission
                 locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                d.setText("Engine Failure");
             }
         });
         b4.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //noinspection MissingPermission
                 locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                d.setText("Man Over Board");
             }
         });
 
