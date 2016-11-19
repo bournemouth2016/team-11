@@ -125,12 +125,12 @@ if($aC->loggedIn()==false)header('Location:index.php');
                 <ul id="myTab" class="nav nav-tabs nav-justified">
                     <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-tree"></i> Register a Boat</a>
                     </li>
-                    <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-car"></i> Service Two</a>
+                    <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-car"></i> Boats</a>
                     </li>
-                    <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-support"></i> Service Three</a>
+                    <!--<li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-support"></i> Service Three</a>
                     </li>
                     <li class=""><a href="#service-four" data-toggle="tab"><i class="fa fa-database"></i> Service Four</a>
-                    </li>
+                    </li>-->
                 </ul>
 
                 <div id="myTabContent" class="tab-content">
@@ -172,11 +172,26 @@ if($aC->loggedIn()==false)header('Location:index.php');
 						</form>
                     </div>
                     <div class="tab-pane fade" id="service-two">
-                        <h4>Service Two</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+                        <h4>Boats</h4>
+                        <?php
+                        session_start();
+                        require "database.php";
+						$db = new Database();
+
+						$res = $db->query("SELECT * FROM registeredBoats WHERE userid='".$_SESSION['id']."'");
+						
+						while($row = $res->fetch_assoc())
+						{
+							echo "<h3>".$row['boat_type']."</h3>";
+							echo "<h5>".$row['area']."</h5>";
+							echo "<h5>".$row['tel_num']."</h5>";
+							echo "<img src='".$row['file_path']."'>";
+							echo "<hr>";
+						}
+						
+                        ?>
                     </div>
-                    <div class="tab-pane fade" id="service-three">
+                    <!--<div class="tab-pane fade" id="service-three">
                         <h4>Service Three</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
@@ -185,7 +200,7 @@ if($aC->loggedIn()==false)header('Location:index.php');
                         <h4>Service Four</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
-                    </div>
+                    </div>-->
                 </div>
 
             </div>
@@ -197,7 +212,7 @@ if($aC->loggedIn()==false)header('Location:index.php');
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Your Website 2016</p>
                 </div>
             </div>
         </footer>

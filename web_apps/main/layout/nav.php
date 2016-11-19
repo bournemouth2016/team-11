@@ -25,14 +25,19 @@
         }
         if (!isset($id)) {
           echo "<li><form id='loginForm' action='login.php' method='post'><label>User</label><input name='username'><label>Password</label><input type='password' name='password'><input type='submit' value='Log In'></form></li>";
+			echo "<li>
+                    <a href='register.php'>Register</a>
+                </li>";
         }
+        else{
+			echo "<li>
+                    <a href='logout.php'>Log out</a>
+                </li>";
+		}
       ?>
       <li>
           <a href="about.php">About</a>
       </li>
-                <li>
-                    <a href="register.php">Register</a>
-                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
