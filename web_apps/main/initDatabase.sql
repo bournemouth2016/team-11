@@ -12,3 +12,12 @@ salt VARCHAR(40),
 email VARCHAR(60),
 utype VARCHAR(20)
 );
+
+CREATE TABLE registeredBoats(
+boatid INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+userid INT(7) NOT NULL,
+boat_type VARCHAR(40) NOT NULL,
+area VARCHAR(40),
+tel_num VARCHAR(20),
+file_path VARCHAR(150)
+);

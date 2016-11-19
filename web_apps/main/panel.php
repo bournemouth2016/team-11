@@ -219,26 +219,38 @@ if($aC->loggedIn()==false)header('Location:index.php');
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="service-one">
-                        <form id="regForm" action="createAccount.php" method="post">
+                        <form id="regForm" action="registerBoat.php" method="post" enctype="multipart/form-data">
 							<table>
 								<tr>
 									<td>Boat type</td>
-									<td><input name="b_type"></td>
+									<td><select name="b_type">
+										<option value="speedboat">Speedboat</option>
+										<option value="ferry">Ferry</option>
+										<option value="fishingboat">Fishing boat</option>
+										<option value="other">Other</option>
+									</td>
 								</tr>
 								<tr>
 									<td>Contact number</td>
 									<td><input type="tel" name="tel_num"></td>
 								</tr>
 								<tr>
-									<td>Input password again</td>
-									<td><input type="password" name="passwordVerify"></td>
+									<td>Area</td>
+									<td><select name="area">
+										<option value="africa">Africa</option>
+										<option value="Asia">Asia</option>
+										<option value="bangladesh">Bangladesh</option>
+										<option value="other">Other</option>
+									</td>
 								</tr>
 								<tr>
-									<td>Input your e-mail</td>
-									<td><input type="email" name="email"></td>
+									<td>Boat image</td>
+									<td>
+										<input type="file" name="b_image">
+									</td>
 								</tr>
 								<tr>
-									<td><input type="submit" value="Sign Up"></td>
+									<td><input type="submit" value="Register the boat"></td>
 								</tr>
 							</table>
 						</form>
