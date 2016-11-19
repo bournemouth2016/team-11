@@ -29,7 +29,7 @@ if($count[0] > 3){
 else
     */
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if ($stmt = mysqli_prepare($connection, "SELECT * FROM `users` WHERE id = ?")) {
+    if ($stmt = mysqli_prepare($connection, "SELECT * FROM `users` WHERE userid = ?")) {
         mysqli_stmt_bind_param($stmt, "i", $id);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
