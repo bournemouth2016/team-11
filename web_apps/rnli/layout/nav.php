@@ -102,16 +102,19 @@
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="incident_charts.php">Alarm Charts</a>
+                            <a href="incident_charts.php">Incidents Charts</a>
                         </li>
                         <li>
-                            <a href="morris.php">Lives Charts</a>
-                        </li>
-                        <li>
-                            <a href="morris.php">Vessels Charts</a>
+                            <a href="lives_charts.php">Lives &amp; Vessels Charts</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="alerts.php"><i class="fa fa-bell fa-fw"></i> Alerts</a>
+                </li>
+                <li>
+                    <a href="incidents.php"><i class="fa fa-anchor fa-fw"></i> Incidents</a>
                 </li>
             </ul>
         </div>

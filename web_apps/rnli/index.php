@@ -22,7 +22,7 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Alarms
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -33,7 +33,7 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Vessels
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -54,7 +54,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                            <i class="fa fa-bell fa-fw"></i> Alerts Panel
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -113,7 +113,7 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Respondents
                         </div>
                         <div class="panel-body">
                             <div id="morris-donut-chart"></div>
@@ -131,7 +131,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php include "layout/data.php" ?>
+    <?php include "layout/dashboard_data.php" ?>
 
 </body>
 
