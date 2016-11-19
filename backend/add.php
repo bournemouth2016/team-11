@@ -1,5 +1,5 @@
 <?php
-require("../includes/config.php");
+
 	//enables sql connection
 	$host = "127.0.0.1";
 	$password="dr0@tN38";
