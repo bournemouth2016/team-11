@@ -11,7 +11,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mariaberggren.rnli.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:layout_marginRight="2dp"
+    android:columnCount="20"
+    android:columnOrderPreserved="false"
+    android:layout_centerVertical="true">
 
     <Button
         android:id="@+id/button"
@@ -40,5 +44,6 @@
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_marginTop="12dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal" />
 </GridLayout>
