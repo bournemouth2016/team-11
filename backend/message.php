@@ -19,6 +19,7 @@ $id=3;
         mysqli_stmt_bind_param($stmt, "i", $id);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
+    }
 
             # Our new data
             curl_setopt_array($ch = curl_init(), array(
