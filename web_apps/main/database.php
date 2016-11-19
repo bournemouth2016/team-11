@@ -1,6 +1,10 @@
 <?php
 class Database {
 	private $database;
+	private $servername = "localhost";
+	private $username = "admin";
+	private $password = "admin";
+	private $dbname = "mainDB";
 
 	
 	function __construct() {
@@ -34,7 +38,7 @@ class Database {
 	}*/
 	
 	private function getConnection() {
-		$conn = new mysqli("localhost", "user3", "z4I3ki5_", "keno_budde_rlmi");
+		$conn = new mysqli("localhost", "admin", "admin", "mainDB");
 		/*if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
