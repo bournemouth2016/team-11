@@ -41,27 +41,23 @@
                         require "../main/database.php";
                         $db = new Database();
                         $result = $db->query("SELECT * FROM users");
+                        $html="";
                         while ($row = $result->fetch_assoc()) {
-                          $html += "<tr class='odd gradeX'>" .
-                                   "<td>".$row['userid']."</td><td>".
-                                   $row['uname']."</td><td>".$row['email'].
-                                   $row['utype']."</td><td><form name='changeType' action='change_type.php' method='post'>" .
-                                   "<input type='radio' name='type' value='normal'>" .
-                                   "<input type='radio' name='type' value='admin'>" .
-                                   "<input type='radio' name='type' value='rnli_staff'>" .
-                                   "<input type='radio' name='type' value='mrcc_staff'>" .
-                                   "<input type='hidden' name='userId' value='".$row["userId"]."'>" .
+						  $x = $row['userid'];
+                          $html = $html."<tr class='odd gradeX'>" .
+                                   "<td>".$x."</td><td>".
+                                   $row['uname']."</td><td>".$row['email']."</td><td>".
+                                   $row['utype']."</td><td>".
+                                   "<form name='changeType' action='change_type.php' method='post'>" .
+                                   "<input type='radio' name='type' value='normal'>Normal</input>" .
+                                   "<input type='radio' name='type' value='admin'>Admin</input>" .
+                                   "<input type='radio' name='type' value='rnli_staff'>RNLI</input>" .
+                                   "<input type='radio' name='type' value='mrcc_staff'>MRCC</input>" .
+                                   "<input type='hidden' name='userid' value='".$x."'></input>" .
                                    "<input type='submit' value='Update type'></form></td></tr>";
                         }
                         echo $html;
                       ?>
-                      <tr class="odd gradeX">
-                        <td>Trident</td>
-                        <td>Internet Explorer 4.0</td>
-                        <td>Win 95+</td>
-                        <td class="center">4</td>
-                        <td class="center">X</td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>

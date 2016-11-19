@@ -1,7 +1,9 @@
 <?php
   session_start();
-  require "database.php";
+  require "../main/database.php";
   $db = new Database();
-  $result = $db->query("UPDATE users SET utype=".$_POST['type'].
-                       " WHERE userid='".$_POST['userId']."'");
+  
+  $db->query("UPDATE users SET utype='".$_POST['type']."'".
+                       " WHERE userid=".$_POST['userid']);
+  header('Location:manage_users.php');
 ?>
