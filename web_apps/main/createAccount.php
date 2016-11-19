@@ -3,18 +3,16 @@ require 'database.php';
 
 //user schema uid, uname, passwd, salt, email, type
 
-/*$db = new Database();
+$db = new Database();
 
-$usr = $db->query("SELECT * FROM users WHERE username = ".$_POST['username'].";");
-$usr = $usr->fetchArray();
+//$usr = $db->query("SELECT * FROM users WHERE uname = '".$_POST['username']."';");
 
-$eml = $db->query("SELECT * FROM users WHERE email = ".$_POST['email'].";");
-$eml = $eml->fetchArray();
+//$eml = $db->query("SELECT * FROM users WHERE email = '".$_POST['email']."';");
 
-if($usr['user_id']!=NULL){
+if($usr->num_rows > 0){
 	header("Location: register.php?fail=taken");
 }
-else if($eml['entry_id']!=NULL){
+else if($eml->num_rows > 0){
 	header("Location: register.php?fail=takenmail");
 }
 else if($_POST['password']!=$_POST['passwordVerify']){
@@ -34,10 +32,11 @@ else{
 	$phash=sha1($_POST['password'].$salt);
 	$db->query("INSERT INTO users VALUES(NULL, '".$_POST['username']."', '".$phash."', '".$salt."', '".$_POST['email']."', 'normal');");
 	$id=$db->lastId();
+	echo $id;
 	//login the user
 	session_start();
 	$_SESSION['id'] = $id;
-	header('Location:panel.php');
-}*/
-echo "1";
+	$_SESSION['type'] = "normal";
+	header('Location:redirectUser.php');
+}
 ?>

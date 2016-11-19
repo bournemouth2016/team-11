@@ -162,8 +162,6 @@
                     <input type="submit" class="btn btn-primary">Send Message</button>
                 </form> -->
                 <form id="regForm" action="createAccount.php" method="post">
-					<div id="error">
-										</div>
 					<table>
 						<tr>
 							<td>Choose your username</td>
