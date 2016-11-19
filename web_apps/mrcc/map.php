@@ -25,9 +25,31 @@
 			  var mapCanvas = document.getElementById("map");
 			  var mapOptions = {
 				center: new google.maps.LatLng(51.508742,-0.120850),
-				zoom: 5
+				zoom: 1
 			  };
 			var map = new google.maps.Map(mapCanvas, mapOptions);
+			
+			<?php
+			
+            require "database.php";
+			$db = new Database();
+
+			$res = $db->query("SELECT * FROM incidents");
+			
+			$I=0;
+			
+			while($row = $res->fetch_assoc())
+			{
+				$I=$I+1;
+				echo "var marker".$I." = new google.maps.Marker({";
+				echo "position: {lat: ".$row['lat'].", lng: ".$row['lon']."},";
+				echo "map: map,";
+				echo "title: '".$row['type']."'";
+				echo "});";
+			}
+			
+			?>
+			
 			}
 			</script>
 
