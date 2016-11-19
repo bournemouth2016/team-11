@@ -18,7 +18,9 @@
         android:src="@drawable/aid2"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:layout_margin="0dp" />
+        android:layout_margin="0dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp" />
 
     <ImageButton
         android:layout_width="173dp"
@@ -30,7 +32,11 @@
         android:src="@drawable/breakdown"
         android:scaleType="fitCenter"
         android:layout_margin="0dp"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:cropToPadding="false" />
 
     <ImageButton
         android:layout_width="177dp"
@@ -42,7 +48,9 @@
         android:src="@drawable/engine"
         android:scaleType="fitCenter"
         android:padding="0dp"
-        android:layout_margin="0dp" />
+        android:layout_margin="0dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp" />
 
     <ImageButton
         android:layout_width="185dp"
@@ -54,5 +62,8 @@
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:src="@drawable/manbverboard"
-        android:padding="0dp" />
+        android:padding="0dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp" />
 </GridLayout>
