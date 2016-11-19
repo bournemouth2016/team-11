@@ -32,4 +32,3 @@ $id=3;
 ));
 curl_exec($ch);
 curl_close($ch);
-?>
