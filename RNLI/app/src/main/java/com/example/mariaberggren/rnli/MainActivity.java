@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
         listener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                t.append("\n " + location.getLongitude() + " " + location.getLatitude());
+                t.setText("RNLI Lifesaver\n " +
+                        "Latitude:  " + location.getLongitude() +
+                        " \nLongitute:  " + location.getLatitude());
             }
 
             @Override
