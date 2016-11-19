@@ -18,6 +18,8 @@
         }
 	$error=$_POST["error"];
     $id=$_POST["username"];
+    $longitude =$_POST["longitude"];
+    $latitude = $_POST["latitude"];
 /*
     mysqli_query($connection, "INSERT INTO `ip` (`address` ,`timestamp`)VALUES ('$ip',CURRENT_TIMESTAMP)");
 $result = mysqli_query($connection,"SELECT COUNT(*) FROM `ip` WHERE `address` LIKE '$ip' AND `timestamp` > (now() - interval 10 minute)");
@@ -35,6 +37,7 @@ else
         $result = mysqli_stmt_get_result($stmt);
         $rowno = mysqli_num_rows($result);
         if($rowno!=0) {
+            /*
             if ($stmt4 = mysqli_prepare($connection, "SELECT (`latitude`) FROM `geo` WHERE user_id = ? ORDER BY time DESC LIMIT 1")) {
                 mysqli_stmt_bind_param($stmt4,"i",$id);
                 mysqli_stmt_execute($stmt4);
@@ -45,6 +48,7 @@ else
                 mysqli_stmt_execute($stmt5);
                 $longitude = mysqli_stmt_get_result($stmt5);
             }
+            */
             if ($stmt2 = mysqli_prepare($connection, "INSERT INTO `incidents` (`user_id`, `type`,`longitude`, `latitude`) VALUES (?, ?, ?, ?) ")) {
                 mysqli_stmt_bind_param($stmt2,"iiff",$id, $error, $longitude, $latitude);
                 mysqli_stmt_execute($stmt2);
