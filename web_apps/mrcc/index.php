@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>RNLI | Report Dashboard</title>
+    <title>MRCC | Report Dashboard</title>
     <?php include "layout/head.php" ?>
 </head>
 
