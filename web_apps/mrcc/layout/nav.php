@@ -117,6 +117,9 @@
                     <a href="incidents.php"><i class="fa fa-anchor fa-fw"></i> Incidents</a>
                 </li>
                 <li>
+                    <a href="map.php"><i class="fa fa-anchor fa-fw"></i> Map</a>
+                </li>
+                <li>
                     <a href="troubleshoot.php"><i class="fa fa-desktop fa-fw"></i> Troubleshooting</a>
                 </li>
                 <li>

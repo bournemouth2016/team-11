@@ -21,3 +21,5 @@ area VARCHAR(40),
 tel_num VARCHAR(20),
 file_path VARCHAR(150)
 );
+
+CREATE TABLE incidents(id INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY, itype INT(2), lat FLOAT(9,6),lon FLOAT(9,6));

@@ -312,15 +312,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
-            String s="abc";
-            TextView t;
-            t = (TextView) findViewById(R.id.editText);
+            String s;
+
             try {
                 // Simulate network access.
                 // take mEmail and mPassword and check first if mEmail exists, and then
                 //if mPassword matches that stored for mEmail
 
-                s = (new Communication()).sendPost("login.php","username="+mEmail+"&password="+mPassword);
+                s = (new Communication()).sendPost("loginMobile.php","username="+mEmail+"&password="+mPassword);
                 if(s=="true")
                     return true;
                 else
