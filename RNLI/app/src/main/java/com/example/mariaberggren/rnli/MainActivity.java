@@ -15,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mariaberggren.rnli.R;
@@ -22,6 +23,10 @@ import com.example.mariaberggren.rnli.R;
 public class MainActivity extends AppCompatActivity {
 
     private Button b;
+    private ImageButton b1;
+    private ImageButton b2;
+    private ImageButton b3;
+    private ImageButton b4;
     private TextView t;
     private LocationManager locationManager;
     private LocationListener listener;
@@ -30,11 +35,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.buttons_main);
 
         t = (TextView) findViewById(R.id.textView);
         b = (Button) findViewById(R.id.button);
+
+
+        b1 = (ImageButton) findViewById(R.id.imageButton1);
+        b2 = (ImageButton) findViewById(R.id.imageButton2);
+        b3 = (ImageButton) findViewById(R.id.imageButton3);
+        b4 = (ImageButton) findViewById(R.id.imageButton4);
+
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
@@ -45,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 t.setText("RNLI Lifesaver\n " +
                         "Latitude:  " + location.getLongitude() +
                         " \nLongitute:  " + location.getLatitude());
+                // send https gps here
             }
 
             @Override
@@ -89,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         // this code won't execute IF permissions are not allowed, because in the line above there is return statement.
+        /*
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,5 +109,36 @@ public class MainActivity extends AppCompatActivity {
                 locationManager.requestLocationUpdates("gps", 5000, 0, listener);
             }
         });
+        */
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //noinspection MissingPermission
+                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //noinspection MissingPermission
+                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //noinspection MissingPermission
+                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+            }
+        });
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //noinspection MissingPermission
+                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+            }
+        });
+
     }
 }
