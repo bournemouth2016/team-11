@@ -26,7 +26,7 @@ if($count[0] > 3){
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 if($result!=0) {
-                    if ($stmt2 = mysqli_prepare($connection, "INSERT INTO `geo` * VALUES ?, ? , ? ")) {
+                    if ($stmt2 = mysqli_prepare($connection, "INSERT INTO `geo` (`user_id`, `long`, `lat`) * VALUES ?, ? , ? ")) {
                     mysqli_stmt_bind_param($stmt2,"iff",$id, $long, $lat);
                         mysqli_stmt_execute($stmt2);
                     }
