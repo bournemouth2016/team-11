@@ -18,3 +18,10 @@
 
 <!-- Custom Fonts -->
 <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<?php
+  // session_start();
+  // if ($_SESSION['type'] != "rnli_staff" && $_SESSION['type'] != "admin") {
+  //   header('Location: ../main/index.php');
+  // }
+?>
