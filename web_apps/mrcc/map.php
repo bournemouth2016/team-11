@@ -42,9 +42,9 @@
 			{
 				$I=$I+1;
 				echo "var marker".$I." = new google.maps.Marker({";
-				echo "position: {lat: ".$row['lat'].", lng: ".$row['lon']."},";
+				echo "position: {lat: ".$row['latitude'].", lng: ".$row['longitude']."},";
 				echo "map: map,";
-				echo "title: '".$row['type']."'";
+				echo "title: 'User_".$row['user_id']."'";
 				echo "});";
 			}
 			

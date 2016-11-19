@@ -10,6 +10,6 @@ else if($_SESSION['type'] == "rnli_staff"){
 	header('Location:../rnli/index.php');
 }
 else if($_SESSION['type'] == "mrcc_staff"){
-	header('Location:../rnli/index.php');
+	header('Location:../mrcc/index.php');
 }
 ?>
