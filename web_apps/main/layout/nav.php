@@ -14,15 +14,19 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-      <li>
-        <form id="loginForm" action="login.php" method="post">
-          <label>User</label>
-          <input name="username">
-          <label>Password</label>
-          <input type="password" name="password">
-          <input type="submit" value="Log In">
-        </form>
-      </li>
+      <?php
+        if (!isset($_SESSION)) {
+          session_start();
+        }
+        else {
+          if (isset($_SESSION["id"])) {
+            $id = $_SESSION["id"];
+          }
+        }
+        if (!isset($id)) {
+          echo "<li><form id='loginForm' action='login.php' method='post'><label>User</label><input name='username'><label>Password</label><input type='password' name='password'><input type='submit' value='Log In'></form></li>";
+        }
+      ?>
       <li>
           <a href="about.php">About</a>
       </li>
