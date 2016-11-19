@@ -1,0 +1,12 @@
+#ADD THIS TO MainActivity.java
+import android.os.Vibrator;
+
+    public void Vibrate (View v) {
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(10000);
+    }
+
+#ADD THIS TO AndroidManifest.xml
+    <uses-permission android:name="android.permission.VIBRATE" ></uses-permission>
+    
+#GO TO activity_main.xml, click on onClick for any object/button, type in Vibrate

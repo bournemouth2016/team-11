@@ -23,9 +23,27 @@ import java.net.URLEncoder;
 
 public class MainActivity extends AppCompatActivity {
 String result="";
-
+String user="1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        @Override
+        public void onTokenRefresh() {
+            // Get updated InstanceID token.
+            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+            // If you want to send messages to this application instance or
+            // manage this apps subscriptions on the server side, send the
+            // Instance ID token to your app server.
+            String one="";
+            try {
+                one =
+                        "token=" + URLEncoder.encode(refreshedToken, "UTF-8"),
+                        "id=" + URLEncoder.encode(user, "UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            executePost("http://budde.ws/token.php", one);
+        }
         super.onCreate(savedInstanceState);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "635926860419",
+    "firebase_url": "https://rnli-26aa4.firebaseio.com",
+    "project_id": "rnli-26aa4",
+    "storage_bucket": "rnli-26aa4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635926860419:android:dd6fe0541d912412",
+        "android_client_info": {
+          "package_name": "rlmi.manob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "635926860419-6ihdvd2k0bi6hi9mlaupit83th4de1ah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAeDY0bq9NkDr4wRIvdCiYm1Z_DtGMSxg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

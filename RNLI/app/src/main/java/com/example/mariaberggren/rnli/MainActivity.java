@@ -8,6 +8,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,6 +21,15 @@ import android.widget.TextView;
 
 import com.example.mariaberggren.rnli.R;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button b;
@@ -31,12 +41,16 @@ public class MainActivity extends AppCompatActivity {
     private TextView d;
     private LocationManager locationManager;
     private LocationListener listener;
+    private String result = "";
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buttons_main);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         t = (TextView) findViewById(R.id.textView);
         d = (TextView) findViewById(R.id.distressType);
@@ -116,34 +130,96 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //noinspection MissingPermission
-                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                locationManager.requestLocationUpdates("gps", 60000, 0, listener);
                 d.setText("Medical Problem");
+                result=usePost("123", "1");
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //noinspection MissingPermission
-                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                locationManager.requestLocationUpdates("gps", 60000, 0, listener);
                 d.setText("Sinking");
+                result=usePost("123", "2");
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //noinspection MissingPermission
-                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                locationManager.requestLocationUpdates("gps", 60000, 0, listener);
                 d.setText("Engine Failure");
+                result=usePost("123", "3");
             }
         });
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //noinspection MissingPermission
-                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                locationManager.requestLocationUpdates("gps", 60000, 0, listener);
                 d.setText("Man Over Board");
+                result=usePost("123", "4");
             }
         });
 
+    }
+
+    public String usePost(String username, String error) {
+        String one="";
+        try {
+            one =
+                    "username=" + URLEncoder.encode(username, "UTF-8") +
+                            "&error=" + URLEncoder.encode(error, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return executePost("http://budde.ws/incident.php", one);
+
+    }
+
+    public static String executePost(String targetURL, String urlParameters) {
+        HttpURLConnection connection = null;
+
+        try {
+            //Create connection
+            URL url = new URL(targetURL);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type",
+                    "application/x-www-form-urlencoded");
+
+            connection.setRequestProperty("Content-Length",
+                    Integer.toString(urlParameters.getBytes().length));
+            connection.setRequestProperty("Content-Language", "en-US");
+
+            connection.setUseCaches(false);
+            connection.setDoOutput(true);
+
+            //Send request
+            DataOutputStream wr = new DataOutputStream (
+                    connection.getOutputStream());
+            wr.writeBytes(urlParameters);
+            wr.close();
+
+            //Get Response
+            InputStream is = connection.getInputStream();
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+            StringBuilder response = new StringBuilder(); // or StringBuffer if Java version 5+
+            String line;
+            while ((line = rd.readLine()) != null) {
+                response.append(line);
+                response.append('\r');
+            }
+            rd.close();
+            return response.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
     }
 }
